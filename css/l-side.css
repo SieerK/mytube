@@ -1,0 +1,22 @@
+.l-side {
+    display: flex;
+    flex-direction: column;
+    grid-area: l-side;
+    background-color: #fff;
+    padding: 10px;
+    gap: 1rem;
+    box-shadow: 0 0 8px #00000021;
+}
+
+.chanel {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.chanel:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
