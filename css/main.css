@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    height: 100dvh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.layout {
+  display: grid;
+  grid-template-areas: "header header header" "l-side content r-side" "footer footer footer";
+  grid-template-rows:  70px 1fr 30px;
+  grid-template-columns: 175px 1fr 350px;
+  min-height: 100%;
+}
+
+.gradient {
+    background-image: linear-gradient(to right, #ea76f4, #8c52ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
