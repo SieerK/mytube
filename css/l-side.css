@@ -1,22 +1,56 @@
 .l-side {
+    grid-area: l-side;
     display: flex;
     flex-direction: column;
-    grid-area: l-side;
-    background-color: #fff;
-    padding: 10px;
     gap: 1rem;
-    box-shadow: 0 0 8px #00000021;
+    padding: 12px;
+    background-color: var(--card);
+    box-shadow: 0 0 8px var(--border);
 }
 
-.chanel {
-    display: inline-flex;
+.side-title {
+    margin-bottom: 5px;
+}
+
+.channel {
+    display: flex;
     align-items: center;
-    gap: 5px;
-    padding: 5px;
-    border-radius: 8px;
+    gap: 8px;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.chanel:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
+.channel:hover {
+    background-color: var(--soft);
+}
+
+.channel-avatar {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--soft);
+    flex-shrink: 0;
+}
+
+@media (max-width: 1025px) {
+    .l-side {
+        position: fixed;
+        top: 70px;
+        left: -270px;
+        width: 260px;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+        z-index: 999;
+        transition: left .3s ease;
+        background-color: var(--card);
+    }
+
+    .l-side.active {
+        left: 0;
+    }
 }

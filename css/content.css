@@ -1,3 +1,175 @@
 .content {
     grid-area: content;
+    padding: 20px;
+    overflow-y: auto;
+    min-width: 0;
+}
+
+.video-player {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    background-image: linear-gradient(135deg, var(--gradient-a), var(--gradient-b));
+    box-shadow: 0 0 8px var(--border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 4rem;
+}
+
+.video-info {
+    margin-top: 15px;
+}
+
+.video-info h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.video-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.video-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.video-actions button,
+.subscribe-btn,
+.comment-form button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.video-actions button {
+    background-color: var(--card);
+    color: var(--text);
+    box-shadow: 0 0 6px var(--border);
+}
+
+.video-actions button.active {
+    color: white;
+    background-image: linear-gradient(to right, var(--gradient-a), var(--gradient-b));
+}
+
+.channel-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.channel-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.big-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card);
+    box-shadow: 0 0 6px var(--border);
+}
+
+.subscribe-btn {
+    color: white;
+    background-image: linear-gradient(to right, var(--gradient-a), var(--gradient-b));
+}
+
+.subscribe-btn.subscribed {
+    background-image: none;
+    background-color: var(--soft);
+    color: var(--text);
+}
+
+.description,
+.comment {
+    background-color: var(--card);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 0 8px var(--border);
+}
+
+.description {
+    margin: 15px 0;
+}
+
+.description p {
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+.comments h2 {
+    margin-bottom: 10px;
+}
+
+.comment-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.comment-form input {
+    flex: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 12px;
+    color: var(--text);
+    background-color: var(--card);
+    box-shadow: 0 0 6px var(--border);
+}
+
+.comment-form input:focus-visible {
+    outline: none;
+}
+
+.comment-form button {
+    color: white;
+    background-image: linear-gradient(to right, var(--gradient-a), var(--gradient-b));
+}
+
+.comment {
+    margin-bottom: 10px;
+}
+
+.comment p {
+    margin-top: 5px;
+}
+
+@media (max-width: 700px) {
+    .content {
+        padding: 12px;
+    }
+
+    .video-info h1 {
+        font-size: 1.2rem;
+    }
+
+    .channel-area,
+    .comment-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .video-player {
+        border-radius: 10px;
+        font-size: 2.5rem;
+    }
 }
