@@ -4,26 +4,90 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg: #f9f9f9;
+    --card: #ffffff;
+    --text: #222222;
+    --muted: #666666;
+    --border: #00000021;
+    --soft: #f1f1f1;
+    --gradient-a: #ea76f4;
+    --gradient-b: #8c52ff;
+}
+
+body.dark {
+    --bg: #111111;
+    --card: #1c1c1c;
+    --text: #f1f1f1;
+    --muted: #bbbbbb;
+    --border: #ffffff18;
+    --soft: #2a2a2a;
+}
+
+html,
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: #f9f9f9;
-    height: 100dvh;
+    min-height: 100%;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .layout {
-  display: grid;
-  grid-template-areas: "header header header" "l-side content r-side" "footer footer footer";
-  grid-template-rows:  70px 1fr 30px;
-  grid-template-columns: 175px 1fr 350px;
-  min-height: 100%;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "l-side content r-side"
+        "footer footer footer";
+    grid-template-columns: 200px minmax(0, 1fr) 350px;
+    grid-template-rows: 70px 1fr 40px;
+    min-height: 100vh;
 }
 
 .gradient {
-    background-image: linear-gradient(to right, #ea76f4, #8c52ff);
+    background-image: linear-gradient(to right, var(--gradient-a), var(--gradient-b));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-weight: bold;
+}
+
+button {
+    font-family: inherit;
+}
+
+.overlay {
+    display: none;
+}
+
+@media (max-width: 1025px) {
+    .layout {
+        grid-template-areas:
+            "header"
+            "content"
+            "r-side"
+            "footer";
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .content,
+    .r-side {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+    .overlay.active {
+        display: block;
+        position: fixed;
+        inset: 70px 0 0 0;
+        background-color: rgba(0, 0, 0, .35);
+        z-index: 800;
+    }
 }

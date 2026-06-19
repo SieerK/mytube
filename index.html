@@ -1,83 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeuTube</title>
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/l-side.css">
-    <link rel="stylesheet" href="css/r-side.css">
     <link rel="stylesheet" href="css/content.css">
+    <link rel="stylesheet" href="css/r-side.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="shortcut icon"
-        href="//moodle.ifsc.edu.br/pluginfile.php/1/theme_ifsc2023/favicon/1780490473/favicon.ico">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-    <title>Guilherme</title>
 </head>
 
 <body>
     <section class="layout">
+
         <header class="header">
+            <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir inscrições">
+                <i class="fa fa-bars gradient"></i>
+            </button>
+
             <div class="logo">
-                <a href="#"><img src="images/Logo.png" alt="Logo MeuTube" width="150px" height="35px"
-                        title="MeuTube"></a>
-            </div>
-            <div class="search-wrapper">
-                <input type="text" class="search">
-                <a href="">
-                    <i class="fa fa-search gradient"></i>
+                <a href="#">
+                    <img src="images/Logo.png" alt="Logo MeuTube">
                 </a>
             </div>
-            <div class="user">
+
+            <div class="search-wrapper">
+                <input type="text" class="search" placeholder="Pesquisar">
+                <button class="search-btn" type="button">
+                    <i class="fa fa-search gradient"></i>
+                </button>
+            </div>
+
+            <button class="profile-btn" id="profileBtn" type="button" aria-label="Perfil">
                 <i class="fa fa-user gradient"></i>
+            </button>
+
+            <div class="theme-modal" id="themeModal">
+                <h3>Configurações</h3>
+                <p>Alterar tema do site</p>
+
+                <button class="theme-btn" id="themeBtn" type="button">
+                    <i class="fa fa-moon"></i>
+                    Tema escuro
+                </button>
             </div>
         </header>
 
-        <aside class="l-side">
-            <p class="gradient">INSCRIÇÕES</p>
-            <div class="chanel">
-                <div class="user">
-                    <i class="fa fa-user gradient"></i>
+        <aside class="l-side" id="lSide">
+            <p class="gradient side-title">INSCRIÇÕES</p>
+
+            <div class="channel">
+                <div class="channel-avatar"><i class="fa fa-user gradient"></i></div>
+                <p>Canal Tech</p>
+            </div>
+
+            <div class="channel">
+                <div class="channel-avatar"><i class="fa fa-user gradient"></i></div>
+                <p>Dev Aprendiz</p>
+            </div>
+
+            <div class="channel">
+                <div class="channel-avatar"><i class="fa fa-user gradient"></i></div>
+                <p>Design Fácil</p>
+            </div>
+
+            <div class="channel">
+                <div class="channel-avatar"><i class="fa fa-user gradient"></i></div>
+                <p>Mundo CSS</p>
+            </div>
+
+            <div class="channel">
+                <div class="channel-avatar"><i class="fa fa-user gradient"></i></div>
+                <p>Programação BR</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section class="video-player">
+                <i class="fa fa-play"></i>
+            </section>
+
+            <section class="video-info">
+                <h1>Como criar um layout responsivo inspirado no YouTube</h1>
+
+                <div class="video-meta">
+                    <span>42.350 visualizações</span>
+                    <span>Publicado há 2 dias</span>
                 </div>
-                <div class="chanel-name">
-                    <p>Canal 1</p>
+
+                <div class="video-actions">
+                    <button id="likeBtn" type="button">
+                        <i class="fa fa-thumbs-up"></i>
+                        <span id="likeText">Curtir</span>
+                    </button>
+
+                    <button id="shareBtn" type="button">
+                        <i class="fa fa-share"></i>
+                        Compartilhar
+                    </button>
+                </div>
+
+                <section class="channel-area">
+                    <div class="channel-info">
+                        <div class="big-avatar">
+                            <i class="fa fa-user gradient"></i>
+                        </div>
+
+                        <div>
+                            <h2>Canal Tech</h2>
+                            <p>120 mil inscritos</p>
+                        </div>
+                    </div>
+
+                    <button class="subscribe-btn" id="subscribeBtn" type="button">Inscrever-se</button>
+                </section>
+
+                <section class="description">
+                    <strong>Descrição</strong>
+                    <p>
+                        Neste vídeo, você aprende como organizar um layout com header,
+                        menu lateral, vídeo principal, recomendações e footer usando
+                        HTML, CSS Grid, Flexbox e JavaScript.
+                    </p>
+                </section>
+
+                <section class="comments">
+                    <h2>Comentários</h2>
+
+                    <div class="comment-form">
+                        <input type="text" id="commentInput" placeholder="Adicione um comentário">
+                        <button id="commentBtn" type="button">Comentar</button>
+                    </div>
+
+                    <div id="commentList">
+                        <div class="comment">
+                            <strong>Ana</strong>
+                            <p>Ficou muito bom o vídeo!</p>
+                        </div>
+
+                        <div class="comment">
+                            <strong>Lucas</strong>
+                            <p>Gostei bastante da parte de estilos do CSS.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <aside class="r-side">
+            <h3 class="gradient">Recomendados</h3>
+
+            <div class="recommended-video">
+                <div class="recommended-thumb"></div>
+                <div>
+                    <strong>CSS Grid na prática</strong>
+                    <p>Design Fácil</p>
+                    <span>18 mil visualizações</span>
                 </div>
             </div>
-            <div class="chanel">
-                <div class="user">
-                    <i class="fa fa-user gradient"></i>
-                </div>
-                <div class="chanel-name">
-                    <p>Canal 2</p>
-                </div>
-            </div>
-            <div class="chanel">
-                <div class="user">
-                    <i class="fa fa-user gradient"></i>
-                </div>
-                <div class="chanel-name">
-                    <p>Canal 3</p>
+
+            <div class="recommended-video">
+                <div class="recommended-thumb"></div>
+                <div>
+                    <strong>HTML semântico explicado</strong>
+                    <p>Dev Aprendiz</p>
+                    <span>31 mil visualizações</span>
                 </div>
             </div>
-            <div class="chanel">
-                <div class="user">
-                    <i class="fa fa-user gradient"></i>
+
+            <div class="recommended-video">
+                <div class="recommended-thumb"></div>
+                <div>
+                    <strong>Flexbox para iniciantes</strong>
+                    <p>Mundo CSS</p>
+                    <span>26 mil visualizações</span>
                 </div>
-                <div class="chanel-name">
-                    <p>Canal 4</p>
+            </div>
+
+            <div class="recommended-video">
+                <div class="recommended-thumb"></div>
+                <div>
+                    <strong>JavaScript básico para sites</strong>
+                    <p>Programação BR</p>
+                    <span>54 mil visualizações</span>
                 </div>
             </div>
         </aside>
 
-
-
-        <main class="content">3</main>
-        <aside class="r-side">4</aside>
-        <footer class="footer">5</footer>
-
+        <footer class="footer">
+            <p>&copy; 2026 MeuTube. Todos os direitos reservados.</p>
+        </footer>
     </section>
 
-</body>
+    <div class="overlay" id="overlay"></div>
 
+    <script src="js/script.js"></script>
+</body>
 </html>
+
